@@ -35,7 +35,7 @@ skewness(annual_max_wind)
 YKi(annual_max_wind)
 
 #Prints a paragraph comparing the plots and the numerical summary statistics
-print("")
+print("The graphs and the calculated data seems to agree with one another. For the histogram we see that the data is tailing to the right and the skewness factor we calculated gives us a value which indicates there is a high positive skewness")
 
 #Creates five random samples of yearly wind maxima
 #memory preallocation
@@ -51,6 +51,10 @@ for(i in 1:length(list_of_vec)){
 
 #Calculates the mean, median, tri-mean, standard deviation, media absolute deviation, IQR, skewness and Yule-Kendall index for each subsample
 #memory preallocation
+
+#there are better ways of storing this, but limited since assignment requirments, normally I would not keep 
+#so many seperated containers
+
 sub_mean <- rep(NA_real_,length(list_of_vec))
 sub_median <- rep(NA_real_,length(list_of_vec))
 sub_tri <- rep(NA_real_,length(list_of_vec))
