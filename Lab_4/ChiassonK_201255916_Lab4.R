@@ -38,23 +38,29 @@ YKi(annual_max_wind)
 print("")
 
 #Creates five random samples of yearly wind maxima
+#memory preallocation
 list_of_vec <- vector("list",5)
 names(list_of_vec) <- c("s1","s2","s3","s4","s5")
-n <- c(1:5)
-for(i in n){
+for(i in 1:length(list_of_vec)){
+  list_of_vec[[i]] <-rep(NA_integer_,15)
+}
+#sample generation
+for(i in 1:length(list_of_vec)){
   list_of_vec[[i]] <-sample(annual_max_wind,size=15)
 }
 
 #Calculates the mean, median, tri-mean, standard deviation, media absolute deviation, IQR, skewness and Yule-Kendall index for each subsample
-sub_mean <- vector(,length(list_of_vec))
-sub_median <- vector(,length(list_of_vec))
-sub_tri <- vector(,length(list_of_vec))
-sub_sd <- vector(,length(list_of_vec))
-sub_mabDev <- vector(,length(list_of_vec))
-sub_iqr <- vector(,length(list_of_vec))
-sub_skew <- vector(,length(list_of_vec))
-sub_yki <- vector(,length(list_of_vec))
+#memory preallocation
+sub_mean <- rep(NA_real_,length(list_of_vec))
+sub_median <- rep(NA_real_,length(list_of_vec))
+sub_tri <- rep(NA_real_,length(list_of_vec))
+sub_sd <- rep(NA_real_,length(list_of_vec))
+sub_mabDev <- rep(NA_real_,length(list_of_vec))
+sub_iqr <- rep(NA_real_,length(list_of_vec))
+sub_skew <- rep(NA_real_,length(list_of_vec))
+sub_yki <- rep(NA_real_,length(list_of_vec))
 
+#calculations
 for(i in 1:length(list_of_vec)){
   sub_mean[i] <- mean(list_of_vec[[i]])
   sub_median[i] <- median(list_of_vec[[i]])
