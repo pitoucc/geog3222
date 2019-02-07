@@ -35,10 +35,11 @@ skewness(annual_max_wind)
 YKi(annual_max_wind)
 
 #Prints a paragraph comparing the plots and the numerical summary statistics
-print("filler")
+print("")
 
 #Creates five random samples of yearly wind maxima
 list_of_vec <- vector("list",5)
+names(list_of_vec) <- c("s1","s2","s3","s4","s5")
 n <- c(1:5)
 for(i in n){
   list_of_vec[[i]] <-sample(annual_max_wind,size=15)
@@ -67,20 +68,29 @@ for(i in 1:length(list_of_vec)){
 
 #Reports the range of subsample data with comments on agreement and resistance of location measure, spread measures and spread measures
 cat(" Mean range:", range(sub_mean),"\n",
-      "Meidan range:", range(sub_median),"\n",
+      "Median range:", range(sub_median),"\n",
       "Tri-mean range:", range(sub_tri),"\n",
       "Standard deviation range:", range(sub_sd),"\n",
       "Median absolue deviation range:", range(sub_mabDev),"\n",
       "IQR range:", range(sub_iqr),"\n",
       "Skewness range:", range(sub_skew),"\n",
-      "Yull-Kendall Indec range:", range(sub_yki),"\n")
+      "Yull-Kendall Index range:", range(sub_yki),"\n")
                     
-print("filler")
+cat("Mean:",
+    "\nMedia:",
+    "\nMode:",
+    "\nTrimean:",
+    "\nStd Dev:",
+    "\nMAD:",
+    "\nIQR:",
+    "\nSkewness: Has a big range and low resistance",
+    "\nYKI: Has a big range and low resistance")
 
 #Prints a paragraph commenting on the uncertainty for the statistics calculated for the annual wind speed maxima data set
 print("The statics calculated for the annual wind speed maxima could vary depending on the performance or the variation in the accuracy
       and percision of equipment. For example, a piece of electronics will operate differently depending on the temperature to which it is exposed
-      which may lead to changes in the data it collects")
+      which may lead to changes in the data it collects. This may introduce variances in the date points or even provide outliers which would effect this such as mean, median and mode or any 
+      subsequent values of low robustness. If the sample size is big enough some of these effects could be mitigated.")
 
 #Prints a paragraph commenting on the differences between the calcualted statistics and that of Toronto
 cat("Given the statistical data for Toronto:",
@@ -101,4 +111,4 @@ cat("Given the statistical data for Toronto:",
     "\n MAD = ",IQR(annual_max_wind),"km/hr", 
     "\n Skewness = ",skewness(annual_max_wind),
     "\n Yule-Kendall = ",YKi(annual_max_wind),
-    "\n\n ")
+    "\n\nIt shows that Toroto has a higher mean wind speed then Site 3, but due to the positive skewness of Site 3 there is a chance for higher Wind speeds. Site 3 also has a higher std deviation which gives higher difference in wind speeds in comparison in Toronto.")
