@@ -98,7 +98,7 @@ cat("Given the statistical data for Toronto:",
     "\n Trimean = ",tri.mean(annual_max_wind),"km/hr",
     "\n Std Dev = ",sd(annual_max_wind),"km/hr",
     "\n IQR = ",medianAbDev(annual_max_wind),"km/hr",
-    "\n MAD = ",IQR(annual_max_wind),"km/hr",
+    "\n MAD = ",IQR(annual_max_wind),"km/hr", 
     "\n Skewness = ",skewness(annual_max_wind),
     "\n Yule-Kendall = ",YKi(annual_max_wind),
-    "\n\n")
+    "\n\n ")
