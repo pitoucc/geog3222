@@ -82,13 +82,13 @@ cat(" Mean range:", range(sub_mean),"\n",
       "Skewness range:", range(sub_skew),"\n",
       "Yull-Kendall Index range:", range(sub_yki),"\n")
                     
-cat("Mean:",
-    "\nMedia:",
-    "\nMode:",
-    "\nTrimean:",
-    "\nStd Dev:",
-    "\nMAD:",
-    "\nIQR:",
+cat("Mean:Moderate acceptance, moderate range under a std dev, moderate resistance",
+    "\nMedia: higer range seems less accepting and less resistant",
+    "\nMode: higer range seems less accepting and less resistant",
+    "\nTrimean higer range seems less accepting and less resistant:",
+    "\nStd Dev: Lower range, seems somewhat resistant",
+    "\nMAD: lower range and variance, seems somewhat resistant",
+    "\nIQR: large range and variance, seems less resistant",
     "\nSkewness: Has a big range and low resistance",
     "\nYKI: Has a big range and low resistance")
 
