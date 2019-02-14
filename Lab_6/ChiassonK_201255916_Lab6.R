@@ -2,9 +2,20 @@
 # Karl Chiasson
 # 201255916
 
-#Load data/scripts
+#Set working directory
+setwd('D:\\Class\\geog_3222\\Labs\\Lab_6')
+
+#Load data/scripts/libraries
+library(extRemes)
+library(MASS)
+load('Dataset3.Rdata')
+source('decluster.g3222.R')
+source('event.decluster.R')
+source('pareto.thresh.decluster.R')
+source('grouping.ts.R')
 
 #Applies grouping.ts to get daily maxima
+nl_daily_maxima <- grouping.ts(data,period='Day',operation='max')
 
 #Declusters wind data to identify "wind storms"
 
